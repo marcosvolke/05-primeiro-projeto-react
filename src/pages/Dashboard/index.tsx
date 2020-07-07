@@ -47,7 +47,8 @@ const Dashboard: React.FC = () => {
             <img src={logoImg} alt="Github Explorer"/>
             <Title>Explore Repositórios no Github.</Title>
 
-            <Form onSubmit={handleAddRepository} >
+            {/* duas exclamações verificam se está preenchido, é uma conversão pra booleano na vdd, poderia usar Boolean(inputError) */}
+            <Form hasError={!!inputError} onSubmit={handleAddRepository} >
                 <input 
                     value={newRepo}
                     onChange={(e) => setNewRepo(e.target.value)}
